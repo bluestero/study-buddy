@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+{% block title %}Study Buddy{% endblock title %}
+
+{% block content %}
+{% for room in rooms %}
+<h2>{{ room.id }} - <a href="{% url 'room' room.id %}">{{ room.name }}</a></h2>
+
+{% endfor %}
+{% endblock content %}
