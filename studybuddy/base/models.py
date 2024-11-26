@@ -17,7 +17,6 @@ class Room(models.Model):
     topic = models.ForeignKey(Topic, on_delete = models.SET_NULL, null = True)
     name = models.CharField(max_length = 128)
     description = models.TextField(null = True, blank = True)
-    # participants = 
     updated = models.DateTimeField(auto_now = True)
     created = models.DateTimeField(auto_now_add = True)
 
