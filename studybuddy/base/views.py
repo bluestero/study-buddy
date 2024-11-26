@@ -3,13 +3,6 @@ from . import models
 
 
 # Create your views here.
-
-# rooms = [
-#     {"id": 1, "name": "Python for beginners."},
-#     {"id": 2, "name": "Learn FastAPI with me."},
-#     {"id": 3, "name": "Diving in Django together."},
-# ]
-
 def home(request):
     rooms = models.Room.objects.all()
     context = {"rooms": rooms}
@@ -19,3 +12,7 @@ def room(request, pk):
     room = models.Room.objects.get(id = pk)
     context = {"room": room}
     return render(request, "base/room.html", context)
+
+def create_room(request):
+    context = {}
+    return render(request, "base/room_form.html", context)
